@@ -1,11 +1,8 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngine.UI;
 
 public class CurrencySystem : MonoBehaviour
 {
-    //FIELDS
     //Currency txt UI
     public TMP_Text txt_Currency;
     //Default currency value
@@ -13,7 +10,6 @@ public class CurrencySystem : MonoBehaviour
     //Current currency value
     public int currency;
 
-    //METHODS
     //Init (set the default values)
     public void Init()
     {
@@ -35,27 +31,15 @@ public class CurrencySystem : MonoBehaviour
             UpdateUI();
             return true;
         }
-        else
-        {
-            return false;
-        }
+        else{ return false; }
     }
     //Check avalability of currency
     public bool EnoughCurrency(int val)
     {
         //Check if the val is equal or more than currency
-        if (val <= currency)
-        {
-            return true;
-        }
-        else
-        { 
-            return false;
-        }
+        if (val <= currency) { return true; }
+        else { return false; }
     }
     //Update txt UI
-    void UpdateUI()
-    {
-        txt_Currency.text = currency.ToString();
-    }
+    void UpdateUI() { txt_Currency.text = currency.ToString(); }
 }

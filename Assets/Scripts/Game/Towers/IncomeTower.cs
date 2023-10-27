@@ -1,20 +1,15 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
-public class IncomeTower : MonoBehaviour
+public class IncomeTower : Tower
 {
     //FIELDS
-    //Health
-    public int health;
     //Income value
     public int incomeValue;
     //Interval for income
     public float interval;
     //Coin image object
     public GameObject obj_coin;
-    //Cost of tower
-    public int cost;
 
     //METHODS
     //Init
@@ -43,20 +38,5 @@ public class IncomeTower : MonoBehaviour
         obj_coin.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         obj_coin.SetActive(false);
-    }
-    //Lose health
-    public void LoseHealth()
-    {
-        health--;
-        if (health == 0)
-        {
-            Die();
-        }
-    }
-    //Die
-    public void Die()
-    {
-        Debug.Log("Tower is dead");
-        Destroy(gameObject);
     }
 }

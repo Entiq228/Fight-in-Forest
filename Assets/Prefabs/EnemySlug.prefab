@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7451117909903717864}
   - component: {fileID: 8863131458617426197}
   - component: {fileID: 8418354479147422163}
+  - component: {fileID: -4129148945342620524}
   m_Layer: 0
   m_Name: EnemySlug
   m_TagString: Enemy
@@ -98,8 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  attackPower: 2
+  attackPower: 5
   moveSpeed: 0.3
+  animator: {fileID: 8418354479147422163}
+  attackInterval: 3
 --- !u!61 &8863131458617426197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +148,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &-4129148945342620524
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8272966587089512858}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
