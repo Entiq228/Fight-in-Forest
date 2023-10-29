@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   cost: 5
-  incomeValue: 4
+  incomeValue: 2
   interval: 5
   obj_coin: {fileID: 3309393425303741077}
 --- !u!61 &904349870332514978

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  cost: 4
+  cost: 10
   damage: 2
   prefab_shootItem: {fileID: 5816746953830024858, guid: 47b31167f1688094aa5e7ec1f3b25e9a, type: 3}
   interval: 4

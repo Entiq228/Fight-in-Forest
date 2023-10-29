@@ -56,3 +56,6 @@ TagManager:
   - name: UI
     uniqueID: 3235889355
     locked: 0
+  - name: Lose
+    uniqueID: 2268560819
+    locked: 0

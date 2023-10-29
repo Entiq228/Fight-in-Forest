@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   attackPower: 5
-  moveSpeed: 0.3
+  moveSpeed: 0.1
   animator: {fileID: 8418354479147422163}
   attackInterval: 3
 --- !u!61 &8863131458617426197
