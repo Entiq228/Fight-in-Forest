@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8203591154337700432}
   - component: {fileID: 176165003424456886}
-  - component: {fileID: -8738726960248168672}
   - component: {fileID: 904349870332514978}
+  - component: {fileID: -8738726960248168672}
   m_Layer: 7
   m_Name: Pink Guy
   m_TagString: Tower
@@ -167,23 +167,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8738726960248168672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8217259953238015071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7370f12a560129e4f954699a65bd8c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
-  cost: 5
-  incomeValue: 2
-  interval: 5
-  obj_coin: {fileID: 3309393425303741077}
 --- !u!61 &904349870332514978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,3 +193,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59351695, y: 0.67839813}
   m_EdgeRadius: 0
+--- !u!114 &-8738726960248168672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217259953238015071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7370f12a560129e4f954699a65bd8c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  cost: 5
+  incomeValue: 2
+  interval: 5
+  obj_coin: {fileID: 3309393425303741077}

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8203591154337700432}
   - component: {fileID: 176165003424456886}
-  - component: {fileID: -4728351230661532006}
   - component: {fileID: 361574526914450569}
+  - component: {fileID: -4728351230661532006}
   m_Layer: 7
   m_Name: Ninja Frog
   m_TagString: Tower
@@ -84,23 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4728351230661532006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8217259953238015071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b0b302f3e13d9f41b6da0fe1af1d5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 4
-  cost: 10
-  damage: 2
-  prefab_shootItem: {fileID: 5816746953830024858, guid: 47b31167f1688094aa5e7ec1f3b25e9a, type: 3}
-  interval: 4
 --- !u!61 &361574526914450569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,3 +110,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58639157, y: 0.67839813}
   m_EdgeRadius: 0
+--- !u!114 &-4728351230661532006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217259953238015071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0b302f3e13d9f41b6da0fe1af1d5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  cost: 10
+  damage: 2
+  prefab_shootItem: {fileID: 5816746953830024858, guid: 47b31167f1688094aa5e7ec1f3b25e9a, type: 3}
+  interval: 4
