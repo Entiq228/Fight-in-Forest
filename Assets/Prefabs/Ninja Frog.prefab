@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 176165003424456886}
   - component: {fileID: 361574526914450569}
   - component: {fileID: -4728351230661532006}
+  - component: {fileID: 3668047278130037701}
   m_Layer: 7
   m_Name: Ninja Frog
   m_TagString: Tower
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 272252407
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b6d14bcb8d9dbb349beb9d3619096732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,6 +125,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   cost: 10
-  damage: 2
+  damage: 3
   prefab_shootItem: {fileID: 5816746953830024858, guid: 47b31167f1688094aa5e7ec1f3b25e9a, type: 3}
   interval: 4
+--- !u!95 &3668047278130037701
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217259953238015071}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67c946d098ea8d347aedcd2bf21ec2f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
