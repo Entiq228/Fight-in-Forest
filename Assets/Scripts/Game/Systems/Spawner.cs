@@ -5,16 +5,11 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    //list of towers (prefabs) that will instatiate
-    public List<GameObject> towersPrefabs;
-    //Transform of the spawning towers (Root object)
-    public GameObject spawnTowerRoot;
-    //list of towers (UI)
-    public List<Image> towersUI;
-    //id of tower to spawn
-    int spawnID = -1;
-    //SpawnPoints Tilemap
-    public Tilemap spawnTilemap;
+    [SerializeField] private List<GameObject> towersPrefabs;
+    [SerializeField] private GameObject spawnTowerRoot;
+    [SerializeField] private List<Image> towersUI;
+    [SerializeField] private int spawnID = -1;
+    [SerializeField] private Tilemap spawnTilemap;
 
     void Update()
     {
@@ -26,26 +21,17 @@ public class Spawner : MonoBehaviour
 
     void DetectSpawnPoint()
     {
-        //Detect when mouse is clicked (first touch clicked)
         if (Input.GetMouseButtonDown(0))
         {
-            //get the world space position of the map
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //get the position of the cell in the tilemap
             var cellPosDefault = spawnTilemap.WorldToCell(mousePos);
-            //get the center position of the cell
             var cellPosCentered = spawnTilemap.GetCellCenterWorld(cellPosDefault);
-            //check if we can spawn in that cell (collider)
             if (spawnTilemap.GetColliderType(cellPosDefault) == Tile.ColliderType.Sprite)
             {
-                //Check if currency is enough to spawn
                 if (GameManager.instance.currency.EnoughCurrency(TowerCost(spawnID)))
                 {
-                    //Use the amount of cost from the currency available
                     GameManager.instance.currency.Use(TowerCost(spawnID));
-                    //Spawn the tower
                     SpawnTower(cellPosCentered);
-                    //Disable the collider
                     spawnTilemap.SetColliderType(cellPosDefault, Tile.ColliderType.None);
                 }
                 else
@@ -79,9 +65,7 @@ public class Spawner : MonoBehaviour
     public void SelectTower(int id)
     {
         DeselectTower();
-        //Set the spawnID
         spawnID = id;
-        //Highlight the tower
         towersUI[spawnID].color = Color.white;
     }
 

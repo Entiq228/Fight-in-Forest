@@ -2,14 +2,9 @@ using UnityEngine;
 
 public class CostDesplay : MonoBehaviour
 {
-    //FIELDS
-    //TowerID
-    public int towerID;
-    //Cost value
-    public int towerCost;
+    [SerializeField] private int towerID;
+    [SerializeField] private int towerCost;
 
-    //METHODS
-    //Init (Fetch the value from the spawner tower list)
     void Start()
     {
         towerCost = GameManager.instance.spawner.TowerCost(towerID);

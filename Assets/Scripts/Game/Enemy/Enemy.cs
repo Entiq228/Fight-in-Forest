@@ -1,16 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
-    //Health, AttackPower, MoveSpeed
-    public int health, attackPower;
-    public float moveSpeed;
-    public Animator animator;
-    public float attackInterval;
-    Coroutine attackOrder;
-    Tower detectedTower;
+    [SerializeField] private int health, attackPower;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float attackInterval;
+    private Coroutine attackOrder;
+    private Tower detectedTower;
 
+    private SpriteRenderer spriteRenderer;
+    
     void Update()
     {
         if (!detectedTower)
@@ -19,16 +21,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     IEnumerator Attack()
     {
         animator.Play("Attack",0,0);
-        //Wait attackInterval
         yield return new WaitForSeconds(attackInterval);
-        //Attack again
         attackOrder = StartCoroutine(Attack());
     }
 
-    //Moving forward
     void Move()
     {
         animator.Play("Move");
@@ -46,14 +50,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //Lose health
     public void LoseHealth()
     {
-        //Decrease health value
         health--;
-        //Blink Red animation
         StartCoroutine(BlinkRed());
-        //Check if health is zero => destroy enemy
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -62,20 +62,16 @@ public class Enemy : MonoBehaviour
 
     IEnumerator BlinkRed()
     {
-        //Change the spriterenderer color to red
-        GetComponent<SpriteRenderer>().color = Color.red;
-        //Wait for really small amount of time
+        spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.2f);
-        //Revert to default color
-        GetComponent<SpriteRenderer>().color = Color.white;
+        spriteRenderer.color = Color.white;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (detectedTower) { return; }
-        if (collision.tag == "Tower")
+        if (collision.TryGetComponent(out detectedTower))
         {
-            detectedTower = collision.GetComponent<Tower>();
             attackOrder = StartCoroutine(Attack());
         }
     }

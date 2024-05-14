@@ -1,45 +1,37 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class CurrencySystem : MonoBehaviour
 {
-    //Currency txt UI
-    public TMP_Text txt_Currency;
-    //Default currency value
-    public int defaultCurrency;
-    //Current currency value
+    [SerializeField] private int defaultCurrency;
     public int currency;
 
-    //Init (set the default values)
+    public Action<int> currencyChanged;
+
     public void Init()
     {
         currency = defaultCurrency;
-        UpdateUI();
+        currencyChanged?.Invoke(currency);
     }
-    //Gain currency (init of value)
     public void Gain(int val)
     {
         currency += val;
-        UpdateUI();
+        currencyChanged?.Invoke(currency);
     }
-    //Lose currency (input of value)
     public bool Use(int val)
     {
         if (EnoughCurrency(val))
         {
             currency -= val;
-            UpdateUI();
+            currencyChanged?.Invoke(currency);
             return true;
         }
         else{ return false; }
     }
-    //Check avalability of currency
     public bool EnoughCurrency(int val)
     {
-        //Check if the val is equal or more than currency
         if (val <= currency) { return true; }
         else { return false; }
     }
-    //Update txt UI
-    void UpdateUI() { txt_Currency.text = currency.ToString(); }
 }

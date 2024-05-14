@@ -3,14 +3,11 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    //The UI text for the health count
     public TMP_Text txt_healthCount;
     public int defoultHealthCount;
-    //Current health count
     public int healthCount;
     public GameObject Lose_Screen;
 
-    //Init the Health System (reset the health count)
     public void Init()
     {
         healthCount = defoultHealthCount;
@@ -30,10 +27,9 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    //Lose health count
     public void LoseHealth()
     {
-        if(healthCount < 1)
+        if (healthCount < 1)
         {
             return;
         }
@@ -43,10 +39,9 @@ public class HealthSystem : MonoBehaviour
         CheckHealthCount();
     }
 
-    //Check health count for losing
     void CheckHealthCount()
     {
-        if(healthCount < 1)
+        if (healthCount < 1)
         {
             Debug.Log("You lost");
             Lose_Screen.SetActive(true);

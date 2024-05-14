@@ -2,27 +2,20 @@ using UnityEngine;
 
 public class ShootItem : MonoBehaviour
 {
-    //FIELDS
-    //Graphics (The sprite render)
-    public Transform graphics;
-    //Damage
-    public int damage;
-    //speed
-    public float flySpeed, rotateSpeed;
+    [SerializeField] private Transform graphics;
+    [SerializeField] private int damage;
+    [SerializeField] private float flySpeed, rotateSpeed;
 
-    //METHODS
-    //Init
     public void Init(int dmg)
     {
         damage = dmg;
     }
-    //Trigger with enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.TryGetComponent<Enemy>(out var enemy))
         {
             Debug.Log("Shot the Enemy");
-            collision.GetComponent<Enemy>().LoseHealth();
+            enemy.LoseHealth();
             Destroy(gameObject);
         }
         if (collision.tag == "Out")
@@ -30,7 +23,6 @@ public class ShootItem : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    //Handle rotation and fly
     void Update()
     {
         Rotate();
